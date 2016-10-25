@@ -1,5 +1,3 @@
-package io.oilfox.backend;
-
 import io.oilfox.backend.api.startup.ApiBootstrapper;
 import io.oilfox.backend.api.shared.startup.Bootstrapper;
 import org.slf4j.Logger;
