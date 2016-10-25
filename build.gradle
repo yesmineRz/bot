@@ -49,3 +49,50 @@ dependencies {
   'com.sun.xml.bind:jaxb-impl:2.2.11'
   testCompile group: 'junit', name: 'junit', version:'4.9'
 }
+
+
+
+
+
+dependencies {
+  compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.22.1'
+
+  testCompile group: 'junit', name: 'junit', version: '4.9'
+}
+
+
+allprojects  {
+  apply plugin: 'maven'
+  apply plugin: 'idea'
+  group = 'io.oilfox'
+  version = '1.0-SNAPSHOT'
+
+  task dist << { task ->
+    //println "$task.project.name"
+  }
+}
+
+subprojects {
+  apply plugin: 'java'
+  apply plugin: 'application'
+
+  sourceCompatibility = 1.8
+  targetCompatibility = 1.8
+
+  repositories {
+    mavenLocal()
+    maven {
+      url "http://repo.maven.apache.org/maven2"
+    }
+  }
+
+  task docker(type: Exec) {
+    commandLine 'sh', 'docker/postbuild.sh', getProjectDir()
+    workingDir rootProject.getProjectDir()
+
+  }
+
+
+
+  dist.dependsOn "build"
+}
