@@ -15,7 +15,8 @@ public class AppProperties {
     private ApplicationPropertiesLoader loader;
 
     public int getPort() {
-        return Integer.parseInt(loader.getProperty("app.port", null));
+        String envPort = System.getenv("PORT");
+        return Integer.parseInt(loader.getProperty("app.port", envPort));
     }
 
     public String getListenAddress() {
