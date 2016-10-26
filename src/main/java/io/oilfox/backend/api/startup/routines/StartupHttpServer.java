@@ -53,6 +53,8 @@ public class StartupHttpServer extends StartupRoutine {
                 appProperties.getPort(),
                 appProperties.getPath());
 
+        logger.info(String.format("Using path: %s", uri));
+
         return URI.create(uri);
     }
 
