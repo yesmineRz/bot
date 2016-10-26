@@ -1,6 +1,8 @@
 package io.oilfox.backend.api.properties;
 
 import io.oilfox.backend.api.shared.properties.ApplicationPropertiesLoader;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.inject.Inject;
 import javax.inject.Singleton;
@@ -10,13 +12,15 @@ import javax.inject.Singleton;
  */
 @Singleton
 public class AppProperties {
+    private final static Logger logger = LoggerFactory.getLogger(AppProperties.class);
 
     @Inject
     private ApplicationPropertiesLoader loader;
 
+
     public int getPort() {
-        String envPort = System.getenv("PORT");
-        return Integer.parseInt(loader.getProperty("app.port", envPort));
+        logger.info(String.format("Current port: %s", loader.getProperty("app.port", null)));
+        return Integer.parseInt(loader.getProperty("app.port", null));
     }
 
     public String getListenAddress() {
