@@ -29,7 +29,7 @@ public class PublicController extends AbstractController{
     public Response getFacebookId(@PathParam("id") String id) throws Exception {
 
 
-        String message = "{\"text\":\"your Facebook ID is "+id+"\"}";
+        String message = "[{\"text\":\"your Facebook ID is "+id+"\"}]";
 
 
         return json(message);
