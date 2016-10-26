@@ -1,6 +1,5 @@
 package io.oilfox.backend.api.controllers;
 
-
 import io.oilfox.backend.api.http.AbstractController;
 import io.oilfox.backend.api.shared.annotations.*;
 

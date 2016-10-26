@@ -22,6 +22,8 @@ public final class Router {
         // public api
         router.get("/ping", PublicController.class, "getPing");
         router.get("/getfacebookid/{id}", PublicController.class, "getFacebookId");
+        router.get("/getchart", ChartController.class, "getLineChart");
+        router.get("/uuu", ChartController.class, "uuu");
 
     }
 }

@@ -11,13 +11,6 @@ import javax.ws.rs.core.Response;
 public abstract class AbstractController {
 
 
-
-
-
-
-
-
-
     protected Response json(int status, Object entity) {
         return Response.status(status).entity(entity).build();
     }
