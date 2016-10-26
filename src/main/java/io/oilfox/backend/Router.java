@@ -24,6 +24,7 @@ public final class Router {
         router.get("/getfacebookid/{id}", PublicController.class, "getFacebookId");
         router.get("/getchart", ChartController.class, "getLineChart");
         router.get("/uuu", ChartController.class, "uuu");
+        router.get("/json", ChartController.class, "accessJson");
 
     }
 }
