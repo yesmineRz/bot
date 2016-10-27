@@ -239,7 +239,7 @@ public class ChartController extends AbstractController{
                 for(int j = 0; i < previous.length(); i++) {
                     String month = previous.getJSONObject(i).getString("month").toString();
                     String value = previous.getJSONObject(i).getString("value").toString();
-                    message += "\n" + month +": " + value + "€\n";
+                    message += "" + month +": " + value + "€";
                 }
                 message += "\"}]";
             }
