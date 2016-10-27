@@ -131,6 +131,75 @@
         "value": "3500"
       }
     ]
+  },
+
+  {
+    "fb_id": "58107cbae4b061a94581d983",
+    "name": "Stefan Lang",
+    "mail": "stefan.lan@gmail.com",
+    "current_balance": "1400",
+    "recent_transactions": [
+      {
+        "date": "25/10/2016",
+        "type": "withdrawal",
+        "amount": "100",
+        "description": "Postbank Marienplatz"
+      },
+      {
+        "date": "18/10/2016",
+        "type": "transfert",
+        "amount": "400",
+        "description": "transfert to AIESEC for rent"
+      },
+      {
+        "date": "17/10/2016",
+        "type": "income",
+        "amount": "10000",
+        "description": "salary bonus for october"
+      },
+      {
+        "date": "14/10/2016",
+        "type": "withdrawal",
+        "amount": "50",
+        "description": "Deutsche Bank Rohrauer"
+      },
+      {
+        "date": "13/10/2016",
+        "type": "withdrawal",
+        "amount": "150",
+        "description": "Deutsche Bank Zielstatt"
+      }
+    ],
+    "balance_previous": [
+      {
+        "month": "July",
+        "value": "1100"
+      },
+      {
+        "month": "August",
+        "value": "1300"
+      },
+      {
+        "month": "September",
+        "value": "1500"
+      }
+    ],
+    "balance_future": [
+      {
+        "month": "November",
+        "value": "1600"
+      },
+      {
+        "month": "December",
+        "value": "1500"
+      },
+      {
+        "month": "January",
+        "value": "1200"
+      }
+    ]
   }
 
 ]}
+
+
