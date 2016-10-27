@@ -13,11 +13,11 @@ import static junit.framework.Assert.assertEquals;
 import static junit.framework.Assert.assertNotNull;
 
 /**
- * Created by Yesmine on 10/26/16.
+ * Created by Yesmine on 27/10/16.
  */
-public class GetChartTest extends TestBase {
+public class GetPreviousBalanceWithNumbersTest extends TestBase {
 
-    private String URL = "http://localhost:9999/getchart/oktober/200/September/100/December/400";
+    private String URL = "http://localhost:9999/getpreviousbalancewithnumbers/58107cbae4b061a94581d983";
 
     @BeforeClass
     public static final void classSetup() throws Exception {
@@ -32,6 +32,8 @@ public class GetChartTest extends TestBase {
                     .asString();
 
             assertEquals(200, response.getStatus());
+            System.out.print("###");
+            System.out.print(response.getBody());
             //assertEquals("Pong", response.getBody());
 
         }
