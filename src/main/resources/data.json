@@ -137,65 +137,133 @@
     "fb_id": "5811f9b6e4b048967e4ac0de",
     "name": "Stefan Lang",
     "mail": "stefan.lan@gmail.com",
-    "current_balance": "1400",
+    "current_balance": "3501400",
     "recent_transactions": [
       {
         "date": "25/10/2016",
         "type": "withdrawal",
-        "amount": "100",
-        "description": "Postbank Marienplatz"
+        "amount": "250",
+        "description": "HBV Marienplatz"
       },
       {
         "date": "18/10/2016",
         "type": "transfert",
-        "amount": "400",
-        "description": "transfert to AIESEC for rent"
+        "amount": "6400",
+        "description": "transfert for rent"
       },
       {
         "date": "17/10/2016",
         "type": "income",
-        "amount": "10000",
+        "amount": "100000",
         "description": "salary bonus for october"
       },
       {
         "date": "14/10/2016",
         "type": "withdrawal",
-        "amount": "50",
-        "description": "Deutsche Bank Rohrauer"
+        "amount": "500",
+        "description": "HVB Bank Rohrauer"
       },
       {
         "date": "13/10/2016",
         "type": "withdrawal",
         "amount": "150",
-        "description": "Deutsche Bank Zielstatt"
+        "description": "HVB Bank Zielstatt"
       }
     ],
     "balance_previous": [
       {
         "month": "July",
-        "value": "1100"
+        "value": "2901100"
       },
       {
         "month": "August",
-        "value": "1300"
+        "value": "2991300"
       },
       {
         "month": "September",
-        "value": "1500"
+        "value": "3401500"
       }
     ],
     "balance_future": [
       {
         "month": "November",
-        "value": "1600"
+        "value": "3701600"
       },
       {
         "month": "December",
-        "value": "1500"
+        "value": "3001500"
       },
       {
         "month": "January",
-        "value": "1200"
+        "value": "3451200"
+      }
+    ]
+  },
+
+
+  {
+    "fb_id": "58121852e4b03e3931f26540",
+    "name": "Gregor",
+    "mail": "gregor@gmail.com",
+    "current_balance": "1200000",
+    "recent_transactions": [
+      {
+        "date": "23/10/2016",
+        "type": "transfert",
+        "amount": "50000",
+        "description": "rent for October"
+      },
+      {
+        "date": "21/10/2016",
+        "type": "withrawal",
+        "amount": "500",
+        "description": "HBV bank Zielstatt"
+      },
+      {
+        "date": "17/10/2016",
+        "type": "income",
+        "amount": "870000",
+        "description": "Lottery"
+      },
+      {
+        "date": "14/10/2016",
+        "type": "withdrawal",
+        "amount": "450",
+        "description": "HBV Bank Marienplatz"
+      },
+      {
+        "date": "13/10/2016",
+        "type": "withdrawal",
+        "amount": "300",
+        "description": "HBV Bank Rohrauer"
+      }
+    ],
+    "balance_previous": [
+      {
+        "month": "July",
+        "value": "1008060"
+      },
+      {
+        "month": "August",
+        "value": "1900763"
+      },
+      {
+        "month": "September",
+        "value": "1408543"
+      }
+    ],
+    "balance_future": [
+      {
+        "month": "November",
+        "value": "1500000"
+      },
+      {
+        "month": "December",
+        "value": "1450000"
+      },
+      {
+        "month": "January",
+        "value": "1608800"
       }
     ]
   }
