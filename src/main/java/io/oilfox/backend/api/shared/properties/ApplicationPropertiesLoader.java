@@ -25,6 +25,7 @@ public class ApplicationPropertiesLoader {
 
     public void Load() throws IOException {
         Load("application.properties");
+        Load("data.json");
     }
 
     public void Load(String fn) throws IOException {
