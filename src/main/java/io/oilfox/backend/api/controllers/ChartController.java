@@ -221,10 +221,8 @@ public class ChartController extends AbstractController{
 
         String message = "[{\"text\":\"Unable to retrieve your account balance for the future months\"}]";
 
-        String path = new File("data.json").getAbsolutePath();
-
-
-        String text = new String(Files.readAllBytes(Paths.get(path)), StandardCharsets.UTF_8);
+        //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        String text = readFile("data.json");
 
 
         JSONObject jobj = new JSONObject(text);
