@@ -183,7 +183,7 @@ public class ChartController extends AbstractController{
             if(user.getString("fb_id").equals(id)){
                 JSONArray previous = new JSONArray(user.getJSONArray("balance_previous").toString());
 
-                message = "[{\"text\":\"Your previous account balance is:\\n";
+                message = "[{\"text\":\"";
                 for(int j = 0; i < previous.length(); i++) {
                     String month = previous.getJSONObject(i).getString("month").toString();
                     String value = previous.getJSONObject(i).getString("value").toString();
@@ -235,7 +235,7 @@ public class ChartController extends AbstractController{
             if(user.getString("fb_id").equals(id)){
                 JSONArray previous = new JSONArray(user.getJSONArray("balance_future").toString());
 
-                message = "[{\"text\":\"Your future account balance is:\\n";
+                message = "[{\"text\":\"";
                 for(int j = 0; i < previous.length(); i++) {
                     String month = previous.getJSONObject(i).getString("month").toString();
                     String value = previous.getJSONObject(i).getString("value").toString();
@@ -374,7 +374,7 @@ public class ChartController extends AbstractController{
             if(user.getString("fb_id").equals(id)){
                 JSONArray previous = new JSONArray(user.getJSONArray("recent_transactions").toString());
 
-                message = "[{\"text\":\"Your previous last transactions are:\\n";
+                message = "[{\"text\":\"";
                 for(int j = 0; i < previous.length(); i++) {
                     String date = previous.getJSONObject(i).getString("date").toString();
                     String type = previous.getJSONObject(i).getString("type").toString();
