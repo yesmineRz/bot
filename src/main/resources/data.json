@@ -82,7 +82,7 @@
         "date": "21/10/2016",
         "type": "withrawal",
         "amount": "200",
-        "description": "HBV bank Zielstatt"
+        "description": "HVB bank Zielstatt"
       },
       {
         "date": "17/10/2016",
@@ -143,7 +143,7 @@
         "date": "25/10/2016",
         "type": "withdrawal",
         "amount": "250",
-        "description": "HBV Marienplatz"
+        "description": "HVB Marienplatz"
       },
       {
         "date": "18/10/2016",
@@ -205,7 +205,7 @@
     "fb_id": "58121852e4b03e3931f26540",
     "name": "Gregor",
     "mail": "gregor@gmail.com",
-    "current_balance": "1200000",
+    "current_balance": "0.15",
     "recent_transactions": [
       {
         "date": "23/10/2016",
@@ -217,7 +217,7 @@
         "date": "21/10/2016",
         "type": "withrawal",
         "amount": "500",
-        "description": "HBV bank Zielstatt"
+        "description": "HVB bank Zielstatt"
       },
       {
         "date": "17/10/2016",
@@ -229,13 +229,13 @@
         "date": "14/10/2016",
         "type": "withdrawal",
         "amount": "450",
-        "description": "HBV Bank Marienplatz"
+        "description": "HVB Bank Marienplatz"
       },
       {
         "date": "13/10/2016",
         "type": "withdrawal",
         "amount": "300",
-        "description": "HBV Bank Rohrauer"
+        "description": "HVB Bank Rohrauer"
       }
     ],
     "balance_previous": [
@@ -249,21 +249,21 @@
       },
       {
         "month": "September",
-        "value": "1408543"
+        "value": "8543"
       }
     ],
     "balance_future": [
       {
         "month": "November",
-        "value": "1500000"
+        "value": "3.7"
       },
       {
         "month": "December",
-        "value": "1450000"
+        "value": "4.9"
       },
       {
         "month": "January",
-        "value": "1608800"
+        "value": "4.2"
       }
     ]
   }
