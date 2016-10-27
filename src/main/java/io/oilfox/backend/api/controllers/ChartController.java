@@ -374,13 +374,13 @@ public class ChartController extends AbstractController{
             if(user.getString("fb_id").equals(id)){
                 JSONArray previous = new JSONArray(user.getJSONArray("recent_transactions").toString());
 
-                message = "[{\"text\":\"Your previous last transactions are:";
+                message = "[{\"text\":\"Your previous last transactions are:\\n";
                 for(int j = 0; i < previous.length(); i++) {
                     String date = previous.getJSONObject(i).getString("date").toString();
                     String type = previous.getJSONObject(i).getString("type").toString();
                     String amount = previous.getJSONObject(i).getString("amount").toString();
                     String description = previous.getJSONObject(i).getString("type").toString();
-                    message += "\n" + date +": " + type + " - "+amount+"€ - description: "+description+"\n";
+                    message += "\\n" + date +": " + type + " - "+amount+"€ - description: "+description+"\\n";
                 }
 
                 message += "\"}]";
