@@ -153,7 +153,7 @@ public class ChartController extends AbstractController{
              JSONObject user = jarr.getJSONObject(i);
              if(user.getString("fb_id").equals(id)){
                  currentBalance = user.getString("current_balance");
-                 message = "[{\"text\":\"Your current account balance is: "+currentBalance+"\"}]";
+                 message = "[{\"text\":\"Current balance is: "+currentBalance+" EUR\"}]";
              }
 
 
