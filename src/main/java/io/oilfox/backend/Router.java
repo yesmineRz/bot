@@ -24,7 +24,7 @@ public final class Router {
         router.get("/getfacebookid/{id}", PublicController.class, "getFacebookId");
         router.get("/getchart/{month1}/{value1}/{month2}/{value2}/{month3}/{value3}", ChartController.class, "getLineChart");
         router.get("/uuu/{month1}/{value1}/{month2}/{value2}/{month3}/{value3}", ChartController.class, "uuu");
-        router.get("/json", ChartController.class, "accessJson");
+        //router.get("/json", ChartController.class, "accessJson");
 
         router.get("/getcurrentbalance/{id}", ChartController.class, "getCurrentBalance");
         router.get("/getpreviousbalancewithnumbers/{id}", ChartController.class, "getPreviousBalanceWithNumbers");
