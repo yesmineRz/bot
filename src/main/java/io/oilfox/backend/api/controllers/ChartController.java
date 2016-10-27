@@ -113,9 +113,10 @@ public class ChartController extends AbstractController{
     @ApiDocDescription("test json")
     public Response accessJson() throws Exception {
 
-        String text = "";
 
-        text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+
+        //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        String text = readFile("data.json");
 
 
 
@@ -140,7 +141,8 @@ public class ChartController extends AbstractController{
         String message = "[{\"text\":\"Unable to retrieve your account balance\"}]";
 
 
-        String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        String text = readFile("data.json");
 
         JSONObject jobj = new JSONObject(text);
 
@@ -168,7 +170,8 @@ public class ChartController extends AbstractController{
         String message = "[{\"text\":\"Unable to retrieve your account balance for the last months\"}]";
 
 
-        String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        String text = readFile("data.json");
 
         JSONObject jobj = new JSONObject(text);
 
@@ -193,6 +196,24 @@ public class ChartController extends AbstractController{
         return Response.ok(message).status(200).build();
     }
 
+    public String readFile(String filename) throws IOException {
+        String content = null;
+        File file = new File(filename); //for ex foo.txt
+        FileReader reader = null;
+        try {
+            reader = new FileReader(file);
+            char[] chars = new char[(int) file.length()];
+            reader.read(chars);
+            content = new String(chars);
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if(reader !=null){reader.close();}
+        }
+        return content;
+    }
+
     @Authenticated
     @Produces("text/plain")
     @ApiDocDescription("test json")
@@ -201,7 +222,8 @@ public class ChartController extends AbstractController{
         String message = "[{\"text\":\"Unable to retrieve your account balance for the future months\"}]";
 
 
-        String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        String text = readFile("data.json");
 
         JSONObject jobj = new JSONObject(text);
 
@@ -235,7 +257,8 @@ public class ChartController extends AbstractController{
         String url = "https://mantro-bot-api.herokuapp.com/getchart";
 
 
-        String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        String text = readFile("data.json");
 
         JSONObject jobj = new JSONObject(text);
 
@@ -285,7 +308,8 @@ public class ChartController extends AbstractController{
         String url = "https://mantro-bot-api.herokuapp.com/getchart";
 
 
-        String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        String text = readFile("data.json");
 
         JSONObject jobj = new JSONObject(text);
 
@@ -337,7 +361,8 @@ public class ChartController extends AbstractController{
 
 
 
-        String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        String text = readFile("data.json");
 
         JSONObject jobj = new JSONObject(text);
 
