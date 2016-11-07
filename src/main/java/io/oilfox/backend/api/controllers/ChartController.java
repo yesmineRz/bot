@@ -156,7 +156,7 @@ public class ChartController extends AbstractController{
              JSONObject user = jarr.getJSONObject(i);
              if(user.getString("fb_id").equals(id)){
                  currentBalance = user.getString("current_balance");
-                 message = "[{\"text\":\"Current balance is "+currentBalance+" EUR\"}]";
+                 message = "[{\"text\":\"Based on your regular in- and outflows you will have "+currentBalance+" EUR\"}]";
              }
 
 
@@ -190,7 +190,7 @@ public class ChartController extends AbstractController{
                 for(int j = 0; j < previous.length(); j++) {
                     String month = previous.getJSONObject(j).getString("month").toString();
                     String value = previous.getJSONObject(j).getString("value").toString();
-                    message += "\\n" + month +": " + value + "€\\n";
+                    message += "\\n" + month +": " + value + " EUR\\n";
                 }
                 message += "\"}]";
             }
@@ -242,7 +242,7 @@ public class ChartController extends AbstractController{
                 for(int j = 0; j < previous.length(); j++) {
                     String month = previous.getJSONObject(j).getString("month").toString();
                     String value = previous.getJSONObject(j).getString("value").toString();
-                    message += "\\n" + month +": " + value + "€\\n";
+                    message += "\\n" + month +": " + value + " EUR\\n";
                 }
                 message += "\"}]";
             }
@@ -383,7 +383,12 @@ public class ChartController extends AbstractController{
                     String type = previous.getJSONObject(i).getString("type").toString();
                     String amount = previous.getJSONObject(i).getString("amount").toString();
                     String description = previous.getJSONObject(i).getString("type").toString();
-                    message += "\\n" + date +": " + type + " - "+amount+"€ - description: "+description+"\\n";
+                    message += amount +" EUR for " + type;
+                    if(i==(previous.length() -1)){
+                        message += ".";
+                    }else {
+                        message += ", ";
+                    }
                 }
 
                 message += "\"}]";
