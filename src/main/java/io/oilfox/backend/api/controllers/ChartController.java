@@ -38,6 +38,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 
 import org.json.simple.parser.JSONParser;
@@ -478,5 +479,33 @@ public class ChartController extends AbstractController{
         }
 
         return Response.ok(message).status(200).build();
+    }
+
+
+    @Authenticated
+    @Produces("text/plain")
+    @ApiDocDescription("test json")
+    public Response getReminder(@PathParam("id") String id, @PathParam("delay") String delay, @PathParam("type") String type) throws Exception {
+
+        if(delay.equals("1")){
+            TimeUnit.SECONDS.sleep(5);
+
+            Response r = null;
+
+            if(type.equals("1")){
+                r = getPreviousBalanceWithNumbers(id);
+            }else if(type.equals("2")){
+                r = getPreviousBalanceWithChart(id);
+            }else if(type.equals("3")){
+                r = getFutureBalanceWithNumbers(id);
+            }else if(type.equals("4")){
+                r = getFutureBalanceWithChart(id);
+            }
+
+            return r;
+        }else{
+            String message = "[{\"text\":\"Done\"}]";
+            return Response.ok(message).status(200).build();
+        }
     }
 }

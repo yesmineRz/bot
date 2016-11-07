@@ -34,6 +34,7 @@ public final class Router {
         router.get("/getlasttransactions/{id}", ChartController.class, "getLastTransactions");
         router.get("/getmorningmessage/{name}/{id}", ChartController.class, "getMorningMessage");
         router.get("/getfuturebalancenextmonth/{id}", ChartController.class, "getFutureBalanceNextMonth");
+        router.get("/getreminder/{id}/{delay}/{type}", ChartController.class, "getReminder");
 
     }
 }
