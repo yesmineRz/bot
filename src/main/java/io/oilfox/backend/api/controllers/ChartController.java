@@ -156,7 +156,7 @@ public class ChartController extends AbstractController{
              JSONObject user = jarr.getJSONObject(i);
              if(user.getString("fb_id").equals(id)){
                  currentBalance = user.getString("current_balance");
-                 message = "[{\"text\":\"Based on your regular in- and outflows you will have "+currentBalance+" EUR\"}]";
+                 message = "[{\"text\":\"Current balance is "+currentBalance+" EUR\"}]";
              }
 
 
@@ -439,6 +439,42 @@ public class ChartController extends AbstractController{
 
         if(!foundUser){
             message += "\"}]";
+        }
+
+        return Response.ok(message).status(200).build();
+    }
+
+
+    @Authenticated
+    @Produces("text/plain")
+    @ApiDocDescription("test json")
+    public Response getFutureBalanceNextMonth(@PathParam("id") String id) throws Exception {
+
+        String message = "[{\"text\":\"Unable to retrieve your account balance for the next month\"}]";
+
+        //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        String text = readFile("data.json");
+
+
+        JSONObject jobj = new JSONObject(text);
+
+
+        JSONArray jarr = new JSONArray(jobj.getJSONArray("users").toString());
+
+        for(int i = 0; i < jarr.length(); i++) {
+            JSONObject user = jarr.getJSONObject(i);
+            if(user.getString("fb_id").equals(id)){
+                JSONArray previous = new JSONArray(user.getJSONArray("balance_future").toString());
+
+                message = "[{\"text\":\"";
+
+                String month = previous.getJSONObject(0).getString("month").toString();
+                String value = previous.getJSONObject(0).getString("value").toString();
+                message = "[{\"text\":\"Based on your regular in- and outflows you will have "+value+" EUR\"}]";
+
+
+                message += "\"}]";
+            }
         }
 
         return Response.ok(message).status(200).build();
