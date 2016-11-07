@@ -504,8 +504,8 @@ public class ChartController extends AbstractController{
 
             return r;
         }else{
-            String message = "[{\"text\":\"Done\"}]";
-            return Response.ok(message).status(200).build();
+            //String message = "[{\"text\":\"Done\"}]";
+            return null;
         }
     }
 }
