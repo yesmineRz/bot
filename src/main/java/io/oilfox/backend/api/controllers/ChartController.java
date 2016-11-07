@@ -34,7 +34,10 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 import org.json.simple.parser.JSONParser;
@@ -184,9 +187,9 @@ public class ChartController extends AbstractController{
                 JSONArray previous = new JSONArray(user.getJSONArray("balance_previous").toString());
 
                 message = "[{\"text\":\"";
-                for(int j = 0; i < previous.length(); i++) {
-                    String month = previous.getJSONObject(i).getString("month").toString();
-                    String value = previous.getJSONObject(i).getString("value").toString();
+                for(int j = 0; j < previous.length(); j++) {
+                    String month = previous.getJSONObject(j).getString("month").toString();
+                    String value = previous.getJSONObject(j).getString("value").toString();
                     message += "\\n" + month +": " + value + "€\\n";
                 }
                 message += "\"}]";
@@ -236,9 +239,9 @@ public class ChartController extends AbstractController{
                 JSONArray previous = new JSONArray(user.getJSONArray("balance_future").toString());
 
                 message = "[{\"text\":\"";
-                for(int j = 0; i < previous.length(); i++) {
-                    String month = previous.getJSONObject(i).getString("month").toString();
-                    String value = previous.getJSONObject(i).getString("value").toString();
+                for(int j = 0; j < previous.length(); j++) {
+                    String month = previous.getJSONObject(j).getString("month").toString();
+                    String value = previous.getJSONObject(j).getString("value").toString();
                     message += "\\n" + month +": " + value + "€\\n";
                 }
                 message += "\"}]";
@@ -271,9 +274,9 @@ public class ChartController extends AbstractController{
                 JSONArray previous = new JSONArray(user.getJSONArray("balance_previous").toString());
 
                 //message = "[{\"text\":\"Your previous account balance is:";
-                for(int j = 0; i < previous.length(); i++) {
-                    String month = previous.getJSONObject(i).getString("month").toString();
-                    String value = previous.getJSONObject(i).getString("value").toString();
+                for(int j = 0; j < previous.length(); j++) {
+                    String month = previous.getJSONObject(j).getString("month").toString();
+                    String value = previous.getJSONObject(j).getString("value").toString();
                     url += "/" + month + "/" + value;
                     //message += "\n" + month +": " + value + "€\n";
                 }
@@ -322,9 +325,9 @@ public class ChartController extends AbstractController{
                 JSONArray previous = new JSONArray(user.getJSONArray("balance_future").toString());
 
                 //message = "[{\"text\":\"Your previous account balance is:";
-                for(int j = 0; i < previous.length(); i++) {
-                    String month = previous.getJSONObject(i).getString("month").toString();
-                    String value = previous.getJSONObject(i).getString("value").toString();
+                for(int j = 0; j < previous.length(); j++) {
+                    String month = previous.getJSONObject(j).getString("month").toString();
+                    String value = previous.getJSONObject(j).getString("value").toString();
                     url += "/" + month + "/" + value;
                     //message += "\n" + month +": " + value + "€\n";
                 }
@@ -387,6 +390,51 @@ public class ChartController extends AbstractController{
             }
         }
 
+
+        return Response.ok(message).status(200).build();
+    }
+
+
+
+    @Authenticated
+    @Produces("text/plain")
+    @ApiDocDescription("test json")
+    public Response getMorningMessage(@PathParam("name") String name, @PathParam("id") String id) throws Exception {
+
+        String message = "[{\"text\":\"Good morning "+name+"!";
+        String currentBalance = "";
+        String overdraft = "";
+        String scheduled_payment = "";
+        Boolean foundUser = false;
+
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date date = new Date();
+        String currentDate = dateFormat.format(date);
+
+        //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        String text = readFile("data.json");
+
+        JSONObject jobj = new JSONObject(text);
+
+
+        JSONArray jarr = new JSONArray(jobj.getJSONArray("users").toString());
+
+        for(int i = 0; i < jarr.length(); i++) {
+            JSONObject user = jarr.getJSONObject(i);
+            if(user.getString("fb_id").equals(id)){
+                foundUser = true;
+                currentBalance = user.getString("current_balance");
+                overdraft = user.getString("overdraft_facility");
+                scheduled_payment = user.getString("scheduled_payment");
+                message += " Here is your personal financial overview for "+currentDate+". You have "+currentBalance+" EUR on your current account and an overdraft facility of "+overdraft+" EUR. Today you a have a scheduled outbound payment of "+scheduled_payment+" EUR for rent. You will be fine. Have a nice day.\"}]";
+            }
+
+
+        }
+
+        if(!foundUser){
+            message += "\"}]";
+        }
 
         return Response.ok(message).status(200).build();
     }

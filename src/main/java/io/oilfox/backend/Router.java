@@ -32,6 +32,7 @@ public final class Router {
         router.get("/getpreviousbalancewithchart/{id}", ChartController.class, "getPreviousBalanceWithChart");
         router.get("/getfuturebalancewithchart/{id}", ChartController.class, "getFutureBalanceWithChart");
         router.get("/getlasttransactions/{id}", ChartController.class, "getLastTransactions");
+        router.get("/getmorningmessage/{name}/{id}", ChartController.class, "getMorningMessage");
 
 
     }

@@ -4,6 +4,8 @@
     "name": "Yesmine Rezgui",
     "mail": "yesmine.rezgui@gmail.com",
     "current_balance": "1400",
+    "overdraft_facility": "500",
+    "scheduled_payment": "450",
     "recent_transactions": [
       {
         "date": "25/10/2016",
@@ -71,6 +73,8 @@
     "name": "Igor Andreichyn",
     "mail": "igor.andreichyn@gmail.com",
     "current_balance": "5000",
+    "overdraft_facility": "1000",
+    "scheduled_payment": "800",
     "recent_transactions": [
       {
         "date": "23/10/2016",
@@ -138,6 +142,8 @@
     "name": "Stefan Lang",
     "mail": "stefan.lan@gmail.com",
     "current_balance": "3501400",
+    "overdraft_facility": "100000",
+    "scheduled_payment": "2500",
     "recent_transactions": [
       {
         "date": "25/10/2016",
@@ -206,6 +212,8 @@
     "name": "Yesmine Rezgui",
     "mail": "yesmine.rezgui@gmail.com",
     "current_balance": "1400",
+    "overdraft_facility": "100",
+    "scheduled_payment": "300",
     "recent_transactions": [
       {
         "date": "25/10/2016",
