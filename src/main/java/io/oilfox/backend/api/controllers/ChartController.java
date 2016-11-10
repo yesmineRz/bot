@@ -88,6 +88,26 @@ public class ChartController extends AbstractController{
         return Response.ok(img).status(200).build();
     }
 
+    @Produces("image/png")
+    @ApiDocDescription("draws the chart")
+    public Response getStaticChart(@PathParam("type") String type) throws IOException {
+
+
+        BufferedImage img = null;
+        try {
+            if(type.equals("1")){
+                img = ImageIO.read(new File("forecast_chart.png"));
+            }else if(type.equals("2")){
+                img = ImageIO.read(new File("report_chart.png"));
+            }
+
+            System.out.print("+++");
+        } catch (IOException e) {
+            System.out.print(e.toString());
+        }
+        return Response.ok(img).status(200).build();
+    }
+
 
 
 
@@ -277,7 +297,8 @@ public class ChartController extends AbstractController{
                 for(int j = 0; j < previous.length(); j++) {
                     String month = previous.getJSONObject(j).getString("month").toString();
                     String value = previous.getJSONObject(j).getString("value").toString();
-                    String v = value.replace(".","");
+                    String x = value.replace(".","");
+                    String v = x.replace(",","");
                     url += "/" + month + "/" + v;
                     //message += "\n" + month +": " + value + "€\n";
                 }
@@ -285,30 +306,38 @@ public class ChartController extends AbstractController{
                 //message += "\"}]";
             }
         }
-
+            getStaticChart("2");
+            String staticUrl = "https://mantro-bot-api.herokuapp.com/getstaticchart/2";
+            staticUrl += "\"\n";
 
             message = "[  \n" +
                 "  {\n" +
                 "    \"attachment\": {\n" +
                 "      \"type\": \"image\",\n" +
                 "      \"payload\": {\n" +
-                "        \"url\": \"" + url +
+                "        \"url\": \"" + staticUrl +
                 "      }\n" +
                 "    }\n" +
                 "  }\n" +
                 "]";
 
 
+        message = "{\n" +
+                "  \"messages\": [\n" +
+                "    {\n" +
+                "      \"attachment\": {\n" +
+                "        \"type\": \"image\",\n" +
+                "        \"payload\": {\n" +
+                "          \"url\": \""+url +
+                "        }\n" +
+                "      }\n" +
+                "    }\n" +
+                "  ]\n" +
+                "}";
 
-        //return Response.ok(message).status(200).build();
-        BufferedImage img = null;
-        try {
-            img = ImageIO.read(new File("forecast_chart.png"));
-            System.out.print("+++");
-        } catch (IOException e) {
-            System.out.print(e.toString());
-        }
-        return Response.ok(img).status(200).build();
+
+        return Response.ok(message).status(200).build();
+
     }
 
     @Authenticated
@@ -346,13 +375,15 @@ public class ChartController extends AbstractController{
             }
         }
 
+        getStaticChart("1");
+        String staticUrl = "https://mantro-bot-api.herokuapp.com/getstaticchart/1";
 
         message = "[  \n" +
                 "  {\n" +
                 "    \"attachment\": {\n" +
                 "      \"type\": \"image\",\n" +
                 "      \"payload\": {\n" +
-                "        \"url\": \"" + url +
+                "        \"url\": \"" + staticUrl +
                 "      }\n" +
                 "    }\n" +
                 "  }\n" +
