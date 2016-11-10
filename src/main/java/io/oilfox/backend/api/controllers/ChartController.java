@@ -415,7 +415,7 @@ public class ChartController extends AbstractController{
         String scheduled_payment = "";
         Boolean foundUser = false;
 
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        DateFormat dateFormat = new SimpleDateFormat("MMM dd");
         Date date = new Date();
         String currentDate = dateFormat.format(date);
 
