@@ -489,7 +489,7 @@ public class ChartController extends AbstractController{
     public Response getReminder(@PathParam("id") String id, @PathParam("delay") String delay, @PathParam("type") String type) throws Exception {
 
         if(delay.equals("1")){
-            TimeUnit.MINUTES.sleep(1);
+            TimeUnit.SECONDS.sleep(5);
 
             Response r = null;
 
