@@ -501,6 +501,9 @@ public class ChartController extends AbstractController{
                 r = getFutureBalanceWithNumbers(id);
             }else if(type.equals("4")){
                 r = getFutureBalanceWithChart(id);
+            }else if(type.equals("5")){
+                String message = "[{\"text\":\"Reminder: Please chack your payments\"}]";
+                return Response.ok(message).status(200).build();
             }
 
             return r;
