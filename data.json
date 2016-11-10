@@ -3,67 +3,67 @@
     "fb_id": "5824940de4b01e462ca0c0d8",
     "name": "Yesmine Rezgui",
     "mail": "yesmine.rezgui@gmail.com",
-    "current_balance": "43.567",
-    "overdraft_facility": "20.000",
-    "scheduled_payment": "2.500",
+    "current_balance": "43,567.00",
+    "overdraft_facility": "20,000.00",
+    "scheduled_payment": "2,500.00",
     "recent_transactions": [
       {
         "date": "25/10/2016",
         "type": "communication",
-        "amount": "1.560",
+        "amount": "1,560.00",
         "description": "Postbank Marienplatz"
       },
       {
         "date": "18/10/2016",
         "type": "lunch",
-        "amount": "96",
+        "amount": "96.00",
         "description": "transfert to AIESEC for rent"
       },
       {
         "date": "17/10/2016",
         "type": "hardware",
-        "amount": "1.235",
+        "amount": "1,235.00",
         "description": "salary bonus for october"
       },
       {
         "date": "14/10/2016",
         "type": "salaries",
-        "amount": "12.800",
+        "amount": "12,800.00",
         "description": "Deutsche Bank Rohrauer"
       },
       {
         "date": "13/10/2016",
         "type": "travels",
-        "amount": "1.980",
+        "amount": "1,980.00",
         "description": "Deutsche Bank Zielstatt"
       }
     ],
     "balance_previous": [
       {
         "month": "August",
-        "value": "38.260"
+        "value": "38,260.00"
       },
       {
         "month": "September",
-        "value": "40.500"
+        "value": "40,500.00"
       },
       {
         "month": "October",
-        "value": "45.940"
+        "value": "45,940.00"
       }
     ],
     "balance_future": [
       {
         "month": "December",
-        "value": "50.100"
+        "value": "50,100.00"
       },
       {
         "month": "January",
-        "value": "53.150"
+        "value": "53,150.00"
       },
       {
         "month": "February",
-        "value": "57.400"
+        "value": "57,400.00"
       }
     ]
   },
@@ -72,67 +72,67 @@
     "fb_id": "5810a925e4b00f1f789baa84",
     "name": "Igor Andreichyn",
     "mail": "igor.andreichyn@gmail.com",
-    "current_balance": "43.567",
-    "overdraft_facility": "20.000",
-    "scheduled_payment": "2.500",
+    "current_balance": "43,567.00",
+    "overdraft_facility": "20,000.00",
+    "scheduled_payment": "2,500.00",
     "recent_transactions": [
       {
         "date": "25/10/2016",
         "type": "communication",
-        "amount": "1.560",
+        "amount": "1,560.00",
         "description": "Postbank Marienplatz"
       },
       {
         "date": "18/10/2016",
         "type": "lunch",
-        "amount": "96",
+        "amount": "96.00",
         "description": "transfert to AIESEC for rent"
       },
       {
         "date": "17/10/2016",
         "type": "hardware",
-        "amount": "1.235",
+        "amount": "1,235.00",
         "description": "salary bonus for october"
       },
       {
         "date": "14/10/2016",
         "type": "salaries",
-        "amount": "12.800",
+        "amount": "12,800.00",
         "description": "Deutsche Bank Rohrauer"
       },
       {
         "date": "13/10/2016",
         "type": "travels",
-        "amount": "1.980",
+        "amount": "1,980.00",
         "description": "Deutsche Bank Zielstatt"
       }
     ],
     "balance_previous": [
       {
         "month": "August",
-        "value": "38.260"
+        "value": "38,260.00"
       },
       {
         "month": "September",
-        "value": "40.500"
+        "value": "40,500.00"
       },
       {
         "month": "October",
-        "value": "45.940"
+        "value": "45,940.00"
       }
     ],
     "balance_future": [
       {
         "month": "December",
-        "value": "50.100"
+        "value": "50,100.00"
       },
       {
         "month": "January",
-        "value": "53.150"
+        "value": "53,150.00"
       },
       {
         "month": "February",
-        "value": "57.400"
+        "value": "57,400.00"
       }
     ]
   },
@@ -141,67 +141,67 @@
     "fb_id": "5811f9b6e4b048967e4ac0de",
     "name": "Stefan Lang",
     "mail": "stefan.lan@gmail.com",
-    "current_balance": "43.567",
-    "overdraft_facility": "20.000",
-    "scheduled_payment": "2.500",
+    "current_balance": "43,567.00",
+    "overdraft_facility": "20,000.00",
+    "scheduled_payment": "2,500.00",
     "recent_transactions": [
       {
         "date": "25/10/2016",
         "type": "communication",
-        "amount": "1.560",
+        "amount": "1,560.00",
         "description": "Postbank Marienplatz"
       },
       {
         "date": "18/10/2016",
         "type": "lunch",
-        "amount": "96",
+        "amount": "96.00",
         "description": "transfert to AIESEC for rent"
       },
       {
         "date": "17/10/2016",
         "type": "hardware",
-        "amount": "1.235",
+        "amount": "1,235.00",
         "description": "salary bonus for october"
       },
       {
         "date": "14/10/2016",
         "type": "salaries",
-        "amount": "12.800",
+        "amount": "12,800.00",
         "description": "Deutsche Bank Rohrauer"
       },
       {
         "date": "13/10/2016",
         "type": "travels",
-        "amount": "1.980",
+        "amount": "1,980.00",
         "description": "Deutsche Bank Zielstatt"
       }
     ],
     "balance_previous": [
       {
         "month": "August",
-        "value": "38.260"
+        "value": "38,260.00"
       },
       {
         "month": "September",
-        "value": "40.500"
+        "value": "40,500.00"
       },
       {
         "month": "October",
-        "value": "45.940"
+        "value": "45,940.00"
       }
     ],
     "balance_future": [
       {
         "month": "December",
-        "value": "50.100"
+        "value": "50,100.00"
       },
       {
         "month": "January",
-        "value": "53.150"
+        "value": "53,150.00"
       },
       {
         "month": "February",
-        "value": "57.400"
+        "value": "57,400.00"
       }
     ]
   },
@@ -211,67 +211,67 @@
     "fb_id": "58121852e4b03e3931f26540",
     "name": "Yesmine Rezgui",
     "mail": "yesmine.rezgui@gmail.com",
-    "current_balance": "43.567",
-    "overdraft_facility": "20.000",
-    "scheduled_payment": "2.500",
+    "current_balance": "43,567.00",
+    "overdraft_facility": "20,000.00",
+    "scheduled_payment": "2,500.00",
     "recent_transactions": [
       {
         "date": "25/10/2016",
         "type": "communication",
-        "amount": "1.560",
+        "amount": "1,560.00",
         "description": "Postbank Marienplatz"
       },
       {
         "date": "18/10/2016",
         "type": "lunch",
-        "amount": "96",
+        "amount": "96.00",
         "description": "transfert to AIESEC for rent"
       },
       {
         "date": "17/10/2016",
         "type": "hardware",
-        "amount": "1.235",
+        "amount": "1,235.00",
         "description": "salary bonus for october"
       },
       {
         "date": "14/10/2016",
         "type": "salaries",
-        "amount": "12.800",
+        "amount": "12,800.00",
         "description": "Deutsche Bank Rohrauer"
       },
       {
         "date": "13/10/2016",
         "type": "travels",
-        "amount": "1.980",
+        "amount": "1,980.00",
         "description": "Deutsche Bank Zielstatt"
       }
     ],
     "balance_previous": [
       {
-        "month": "July",
-        "value": "1100"
-      },
-      {
         "month": "August",
-        "value": "1300"
+        "value": "38,260.00"
       },
       {
         "month": "September",
-        "value": "1500"
+        "value": "40,500.00"
+      },
+      {
+        "month": "October",
+        "value": "45,940.00"
       }
     ],
     "balance_future": [
       {
-        "month": "November",
-        "value": "3.467"
-      },
-      {
         "month": "December",
-        "value": "1500"
+        "value": "50,100.00"
       },
       {
         "month": "January",
-        "value": "1200"
+        "value": "53,150.00"
+      },
+      {
+        "month": "February",
+        "value": "57,400.00"
       }
     ]
   }
