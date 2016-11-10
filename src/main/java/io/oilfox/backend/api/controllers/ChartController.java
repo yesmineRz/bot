@@ -409,7 +409,8 @@ public class ChartController extends AbstractController{
     @ApiDocDescription("test json")
     public Response getMorningMessage(@PathParam("name") String name, @PathParam("id") String id) throws Exception {
 
-        String message = "[{\"text\":\"Good morning "+name+"!";
+        String message = "[{\"text\":\"Everything is fine.\n";
+        message += "[{\"text\":\"Good morning "+name+"!\n";
         String currentBalance = "";
         String overdraft = "";
         String scheduled_payment = "";
@@ -434,7 +435,7 @@ public class ChartController extends AbstractController{
                 currentBalance = user.getString("current_balance");
                 overdraft = user.getString("overdraft_facility");
                 scheduled_payment = user.getString("scheduled_payment");
-                message += " Here is your personal financial overview for "+currentDate+". You have "+currentBalance+" EUR on your current account and an overdraft facility of "+overdraft+" EUR. Today you a have a scheduled outbound payment of "+scheduled_payment+" EUR for rent. You will be fine. Have a nice day.\"}]";
+                message += " Here is your personal financial overview for "+currentDate+"\n. You have "+currentBalance+" EUR on your current account and an overdraft facility of "+overdraft+" EUR. Today you a have a scheduled outbound payment of "+scheduled_payment+" EUR for rent. You will be fine.\nHave a nice day.\"}]";
             }
 
 
