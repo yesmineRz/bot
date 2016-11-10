@@ -308,13 +308,14 @@ public class ChartController extends AbstractController{
         }
             getStaticChart("2");
             String staticUrl = "https://mantro-bot-api.herokuapp.com/getstaticchart/2";
+            staticUrl += "\"\n";
 
             message = "[  \n" +
                 "  {\n" +
                 "    \"attachment\": {\n" +
                 "      \"type\": \"image\",\n" +
                 "      \"payload\": {\n" +
-                "        \"url\": \"" + staticUrl +"\""+
+                "        \"url\": \"" + staticUrl +
                 "      }\n" +
                 "    }\n" +
                 "  }\n" +
