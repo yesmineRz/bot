@@ -322,6 +322,19 @@ public class ChartController extends AbstractController{
                 "]";
 
 
+        message = "{\n" +
+                "  \"messages\": [\n" +
+                "    {\n" +
+                "      \"attachment\": {\n" +
+                "        \"type\": \"image\",\n" +
+                "        \"payload\": {\n" +
+                "          \"url\": \""+staticUrl +
+                "        }\n" +
+                "      }\n" +
+                "    }\n" +
+                "  ]\n" +
+                "}";
+
 
         return Response.ok(message).status(200).build();
 
