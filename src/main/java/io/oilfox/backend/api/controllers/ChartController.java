@@ -329,7 +329,8 @@ public class ChartController extends AbstractController{
                 for(int j = 0; j < previous.length(); j++) {
                     String month = previous.getJSONObject(j).getString("month").toString();
                     String value = previous.getJSONObject(j).getString("value").toString();
-                    url += "/" + month + "/" + value;
+                    String v = value.replace(".","");
+                    url += "/" + month + "/" + v;
                     //message += "\n" + month +": " + value + "€\n";
                 }
                 url += "\"\n";
@@ -379,13 +380,13 @@ public class ChartController extends AbstractController{
                 JSONArray previous = new JSONArray(user.getJSONArray("recent_transactions").toString());
 
                 message = "[{\"text\":\"";
-                for(int j = 0; i < previous.length(); i++) {
-                    String date = previous.getJSONObject(i).getString("date").toString();
-                    String type = previous.getJSONObject(i).getString("type").toString();
-                    String amount = previous.getJSONObject(i).getString("amount").toString();
-                    String description = previous.getJSONObject(i).getString("type").toString();
+                for(int j = 0; j < previous.length(); j++) {
+                    String date = previous.getJSONObject(j).getString("date").toString();
+                    String type = previous.getJSONObject(j).getString("type").toString();
+                    String amount = previous.getJSONObject(j).getString("amount").toString();
+                    String description = previous.getJSONObject(j).getString("type").toString();
                     message += amount +" EUR for " + type;
-                    if(i==(previous.length() -1)){
+                    if(j==(previous.length() -1)){
                         message += ".";
                     }else {
                         message += ", ";
