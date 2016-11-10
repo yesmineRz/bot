@@ -187,7 +187,7 @@ public class ChartController extends AbstractController{
             if(user.getString("fb_id").equals(id)){
                 JSONArray previous = new JSONArray(user.getJSONArray("balance_previous").toString());
 
-                message = "[{\"text\":\"Forecast:\\n";
+                message = "[{\"text\":\"Report:\\n";
                 for(int j = 0; j < previous.length(); j++) {
                     String month = previous.getJSONObject(j).getString("month").toString();
                     String value = previous.getJSONObject(j).getString("value").toString();
