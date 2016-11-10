@@ -3,67 +3,67 @@
     "fb_id": "58107cbae4b061a94581d983",
     "name": "Yesmine Rezgui",
     "mail": "yesmine.rezgui@gmail.com",
-    "current_balance": "1400",
-    "overdraft_facility": "500",
-    "scheduled_payment": "450",
+    "current_balance": "43.567",
+    "overdraft_facility": "20.000",
+    "scheduled_payment": "2.500",
     "recent_transactions": [
       {
         "date": "25/10/2016",
-        "type": "withdrawal",
-        "amount": "100",
+        "type": "communication",
+        "amount": "1.560",
         "description": "Postbank Marienplatz"
       },
       {
         "date": "18/10/2016",
-        "type": "transfert",
-        "amount": "400",
+        "type": "lunch",
+        "amount": "96",
         "description": "transfert to AIESEC for rent"
       },
       {
         "date": "17/10/2016",
-        "type": "income",
-        "amount": "10000",
+        "type": "hardware",
+        "amount": "1.235",
         "description": "salary bonus for october"
       },
       {
         "date": "14/10/2016",
-        "type": "withdrawal",
-        "amount": "50",
+        "type": "salaries",
+        "amount": "12.800",
         "description": "Deutsche Bank Rohrauer"
       },
       {
         "date": "13/10/2016",
-        "type": "withdrawal",
-        "amount": "150",
+        "type": "travels",
+        "amount": "1.980",
         "description": "Deutsche Bank Zielstatt"
       }
     ],
     "balance_previous": [
       {
-        "month": "July",
-        "value": "1100"
-      },
-      {
         "month": "August",
-        "value": "1300"
+        "value": "38.260"
       },
       {
         "month": "September",
-        "value": "1500"
+        "value": "40.500"
+      },
+      {
+        "month": "October",
+        "value": "45.940"
       }
     ],
     "balance_future": [
       {
-        "month": "November",
-        "value": "1600"
-      },
-      {
         "month": "December",
-        "value": "1500"
+        "value": "50.100"
       },
       {
         "month": "January",
-        "value": "1200"
+        "value": "53.150"
+      },
+      {
+        "month": "February",
+        "value": "57.400"
       }
     ]
   },
@@ -72,67 +72,67 @@
     "fb_id": "5810a925e4b00f1f789baa84",
     "name": "Igor Andreichyn",
     "mail": "igor.andreichyn@gmail.com",
-    "current_balance": "5000",
-    "overdraft_facility": "1000",
-    "scheduled_payment": "800",
+    "current_balance": "43.567",
+    "overdraft_facility": "20.000",
+    "scheduled_payment": "2.500",
     "recent_transactions": [
       {
-        "date": "23/10/2016",
-        "type": "income",
-        "amount": "450",
-        "description": "Lottery"
+        "date": "25/10/2016",
+        "type": "communication",
+        "amount": "1.560",
+        "description": "Postbank Marienplatz"
       },
       {
-        "date": "21/10/2016",
-        "type": "withrawal",
-        "amount": "200",
-        "description": "HVB bank Zielstatt"
+        "date": "18/10/2016",
+        "type": "lunch",
+        "amount": "96",
+        "description": "transfert to AIESEC for rent"
       },
       {
         "date": "17/10/2016",
-        "type": "income",
-        "amount": "10000",
+        "type": "hardware",
+        "amount": "1.235",
         "description": "salary bonus for october"
       },
       {
         "date": "14/10/2016",
-        "type": "withdrawal",
-        "amount": "50",
+        "type": "salaries",
+        "amount": "12.800",
         "description": "Deutsche Bank Rohrauer"
       },
       {
         "date": "13/10/2016",
-        "type": "withdrawal",
-        "amount": "150",
+        "type": "travels",
+        "amount": "1.980",
         "description": "Deutsche Bank Zielstatt"
       }
     ],
     "balance_previous": [
       {
-        "month": "July",
-        "value": "6000"
-      },
-      {
         "month": "August",
-        "value": "6200"
+        "value": "38.260"
       },
       {
         "month": "September",
-        "value": "4200"
+        "value": "40.500"
+      },
+      {
+        "month": "October",
+        "value": "45.940"
       }
     ],
     "balance_future": [
       {
-        "month": "November",
-        "value": "4000"
-      },
-      {
         "month": "December",
-        "value": "4600"
+        "value": "50.100"
       },
       {
         "month": "January",
-        "value": "3500"
+        "value": "53.150"
+      },
+      {
+        "month": "February",
+        "value": "57.400"
       }
     ]
   },
@@ -141,67 +141,67 @@
     "fb_id": "5811f9b6e4b048967e4ac0de",
     "name": "Stefan Lang",
     "mail": "stefan.lan@gmail.com",
-    "current_balance": "3501400",
-    "overdraft_facility": "100000",
-    "scheduled_payment": "2500",
+    "current_balance": "43.567",
+    "overdraft_facility": "20.000",
+    "scheduled_payment": "2.500",
     "recent_transactions": [
       {
         "date": "25/10/2016",
-        "type": "withdrawal",
-        "amount": "250",
-        "description": "HVB Marienplatz"
+        "type": "communication",
+        "amount": "1.560",
+        "description": "Postbank Marienplatz"
       },
       {
         "date": "18/10/2016",
-        "type": "transfert",
-        "amount": "6400",
-        "description": "transfert for rent"
+        "type": "lunch",
+        "amount": "96",
+        "description": "transfert to AIESEC for rent"
       },
       {
         "date": "17/10/2016",
-        "type": "income",
-        "amount": "100000",
+        "type": "hardware",
+        "amount": "1.235",
         "description": "salary bonus for october"
       },
       {
         "date": "14/10/2016",
-        "type": "withdrawal",
-        "amount": "500",
-        "description": "HVB Bank Rohrauer"
+        "type": "salaries",
+        "amount": "12.800",
+        "description": "Deutsche Bank Rohrauer"
       },
       {
         "date": "13/10/2016",
-        "type": "withdrawal",
-        "amount": "150",
-        "description": "HVB Bank Zielstatt"
+        "type": "travels",
+        "amount": "1.980",
+        "description": "Deutsche Bank Zielstatt"
       }
     ],
     "balance_previous": [
       {
-        "month": "July",
-        "value": "2901100"
-      },
-      {
         "month": "August",
-        "value": "2991300"
+        "value": "38.260"
       },
       {
         "month": "September",
-        "value": "3401500"
+        "value": "40.500"
+      },
+      {
+        "month": "October",
+        "value": "45.940"
       }
     ],
     "balance_future": [
       {
-        "month": "November",
-        "value": "3701600"
-      },
-      {
         "month": "December",
-        "value": "3001500"
+        "value": "50.100"
       },
       {
         "month": "January",
-        "value": "3451200"
+        "value": "53.150"
+      },
+      {
+        "month": "February",
+        "value": "57.400"
       }
     ]
   },
@@ -211,38 +211,38 @@
     "fb_id": "58121852e4b03e3931f26540",
     "name": "Yesmine Rezgui",
     "mail": "yesmine.rezgui@gmail.com",
-    "current_balance": "1400",
-    "overdraft_facility": "100",
-    "scheduled_payment": "300",
+    "current_balance": "43.567",
+    "overdraft_facility": "20.000",
+    "scheduled_payment": "2.500",
     "recent_transactions": [
       {
         "date": "25/10/2016",
-        "type": "withdrawal",
-        "amount": "100",
+        "type": "communication",
+        "amount": "1.560",
         "description": "Postbank Marienplatz"
       },
       {
         "date": "18/10/2016",
-        "type": "transfert",
-        "amount": "400",
+        "type": "lunch",
+        "amount": "96",
         "description": "transfert to AIESEC for rent"
       },
       {
         "date": "17/10/2016",
-        "type": "income",
-        "amount": "10000",
+        "type": "hardware",
+        "amount": "1.235",
         "description": "salary bonus for october"
       },
       {
         "date": "14/10/2016",
-        "type": "withdrawal",
-        "amount": "50",
+        "type": "salaries",
+        "amount": "12.800",
         "description": "Deutsche Bank Rohrauer"
       },
       {
         "date": "13/10/2016",
-        "type": "withdrawal",
-        "amount": "150",
+        "type": "travels",
+        "amount": "1.980",
         "description": "Deutsche Bank Zielstatt"
       }
     ],
@@ -263,7 +263,7 @@
     "balance_future": [
       {
         "month": "November",
-        "value": "1600"
+        "value": "3.467"
       },
       {
         "month": "December",
