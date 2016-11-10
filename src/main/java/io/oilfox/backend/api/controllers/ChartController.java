@@ -328,7 +328,7 @@ public class ChartController extends AbstractController{
                 "      \"attachment\": {\n" +
                 "        \"type\": \"image\",\n" +
                 "        \"payload\": {\n" +
-                "          \"url\": \""+staticUrl +
+                "          \"url\": \""+url +
                 "        }\n" +
                 "      }\n" +
                 "    }\n" +
