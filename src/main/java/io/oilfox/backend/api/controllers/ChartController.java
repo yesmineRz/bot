@@ -410,7 +410,7 @@ public class ChartController extends AbstractController{
     public Response getMorningMessage(@PathParam("name") String name, @PathParam("id") String id) throws Exception {
 
         String message = "[{\"text\":\"Everything is fine.\\n";
-        message += "Good morning "+name+"!\n";
+        message += "Good morning "+name+"!\\n";
         String currentBalance = "";
         String overdraft = "";
         String scheduled_payment = "";
