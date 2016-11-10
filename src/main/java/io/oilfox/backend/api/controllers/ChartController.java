@@ -435,7 +435,7 @@ public class ChartController extends AbstractController{
                 currentBalance = user.getString("current_balance");
                 overdraft = user.getString("overdraft_facility");
                 scheduled_payment = user.getString("scheduled_payment");
-                message += " Here is your personal financial overview for "+currentDate+".\\nYou have "+currentBalance+" EUR on your current account and an overdraft facility of "+overdraft+" EUR. Today you a have a scheduled outbound payment of "+scheduled_payment+" EUR for rent. You will be fine.\\nHave a nice day.\"}]";
+                message += "Here is your personal financial overview for "+currentDate+".\\nYou have "+currentBalance+" EUR on your current account and an overdraft facility of "+overdraft+" EUR. Today you a have a scheduled outbound payment of "+scheduled_payment+" EUR for rent. You will be fine.\\nHave a nice day.\"}]";
             }
 
 
