@@ -23,6 +23,7 @@ public final class Router {
         router.get("/ping", PublicController.class, "getPing");
         router.get("/getfacebookid/{id}", PublicController.class, "getFacebookId");
         router.get("/getchart/{month1}/{value1}/{month2}/{value2}/{month3}/{value3}", ChartController.class, "getLineChart");
+        router.get("/getstaticchart/{type}", ChartController.class, "getStaticChart");
         router.get("/uuu/{month1}/{value1}/{month2}/{value2}/{month3}/{value3}", ChartController.class, "uuu");
         //router.get("/json", ChartController.class, "accessJson");
 

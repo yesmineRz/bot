@@ -26,6 +26,8 @@ public class ApplicationPropertiesLoader {
     public void Load() throws IOException {
         Load("application.properties");
         Load("data.json");
+        Load("forecast_chart");
+        Load("report_chart");
     }
 
     public void Load(String fn) throws IOException {
