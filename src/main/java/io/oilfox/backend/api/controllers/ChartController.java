@@ -278,7 +278,8 @@ public class ChartController extends AbstractController{
                 for(int j = 0; j < previous.length(); j++) {
                     String month = previous.getJSONObject(j).getString("month").toString();
                     String value = previous.getJSONObject(j).getString("value").toString();
-                    url += "/" + month + "/" + value;
+                    String v = value.replace(".","");
+                    url += "/" + month + "/" + v;
                     //message += "\n" + month +": " + value + "€\n";
                 }
                 url += "\"\n";
