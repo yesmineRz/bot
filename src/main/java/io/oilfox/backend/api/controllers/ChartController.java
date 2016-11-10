@@ -489,7 +489,7 @@ public class ChartController extends AbstractController{
     public Response getReminder(@PathParam("id") String id, @PathParam("delay") String delay, @PathParam("type") String type) throws Exception {
 
         if(delay.equals("1")){
-            TimeUnit.SECONDS.sleep(5);
+            TimeUnit.SECONDS.sleep(60);
 
             Response r = null;
 
@@ -502,7 +502,7 @@ public class ChartController extends AbstractController{
             }else if(type.equals("4")){
                 r = getFutureBalanceWithChart(id);
             }else if(type.equals("5")){
-                String message = "[{\"text\":\"Reminder: Please chack your payments\"}]";
+                String message = "[{\"text\":\"Reminder: Please check your payments\"}]";
                 r = Response.ok(message).status(200).build();
             }
 
