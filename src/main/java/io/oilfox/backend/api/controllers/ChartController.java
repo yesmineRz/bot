@@ -309,8 +309,7 @@ public class ChartController extends AbstractController{
             getStaticChart("2");
             String staticUrl = "https://mantro-bot-api.herokuapp.com/getstaticchart/2";
 
-        //staticUrl = "https://www.nasa.gov/sites/default/files/styles/image_card_4x3_ratio/public/thumbnails/image/leisa_christmas_false_color.png?itok=Jxf0IlS4";
-        staticUrl += "\"\n";
+         staticUrl += "\"\n";
             message = "[  \n" +
                 "  {\n" +
                 "    \"attachment\": {\n" +
@@ -379,6 +378,7 @@ public class ChartController extends AbstractController{
         getStaticChart("1");
         String staticUrl = "https://mantro-bot-api.herokuapp.com/getstaticchart/1";
 
+        staticUrl += "\"\n";
         message = "[  \n" +
                 "  {\n" +
                 "    \"attachment\": {\n" +
@@ -389,7 +389,6 @@ public class ChartController extends AbstractController{
                 "    }\n" +
                 "  }\n" +
                 "]";
-
 
 
         return Response.ok(message).status(200).build();
