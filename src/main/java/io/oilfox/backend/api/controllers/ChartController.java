@@ -321,7 +321,7 @@ public class ChartController extends AbstractController{
                 "    }\n" +
                 "  }\n" +
                 "]";
-
+/*
 
         message = "{\n" +
                 "  \"messages\": [\n" +
@@ -334,7 +334,7 @@ public class ChartController extends AbstractController{
                 "      }\n" +
                 "    }\n" +
                 "  ]\n" +
-                "}";
+                "}";*/
 
 
         return Response.ok(message).status(200).build();
