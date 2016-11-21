@@ -30,9 +30,7 @@ public class GetFutureBalanceWithNumbersTest extends TestBase {
                     .asString();
 
             assertEquals(200, response.getStatus());
-            System.out.print("###");
-            System.out.print(response.getBody());
-            //assertEquals("Pong", response.getBody());
+            assertEquals("[{\"text\":\"Forecast:\\n\\nDecember: 50,100.00 EUR\\n\\nJanuary: 53,150.00 EUR\\n\\nFebruary: 57,400.00 EUR\\n\"}]", response.getBody());
 
         }
 

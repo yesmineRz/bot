@@ -30,9 +30,7 @@ public class GetFutureBalanceNextMonthTest extends TestBase {
                     .asString();
 
             assertEquals(200, response.getStatus());
-            System.out.print("###");
-            System.out.print(response.getBody());
-            //assertEquals("Pong", response.getBody());
+            assertEquals("[{\"text\":\"Based on your regular in- and outflows you will have 50,100.00 EUR\"}]\"}]", response.getBody());
 
         }
 

@@ -30,9 +30,16 @@ public class GetPreviousBalanceWithChartTest extends TestBase {
                     .asString();
 
             assertEquals(200, response.getStatus());
-            System.out.print("###");
-            System.out.print(response.getBody());
-            //assertEquals("Pong", response.getBody());
+            assertEquals("[  \n" +
+                    "  {\n" +
+                    "    \"attachment\": {\n" +
+                    "      \"type\": \"image\",\n" +
+                    "      \"payload\": {\n" +
+                    "        \"url\": \"https://mantro-bot-api.herokuapp.com/getstaticchart/2\"\n" +
+                    "      }\n" +
+                    "    }\n" +
+                    "  }\n" +
+                    "]", response.getBody());
 
         }
 

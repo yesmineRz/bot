@@ -32,9 +32,7 @@ public class GetPreviousBalanceWithNumbersTest extends TestBase {
                     .asString();
 
             assertEquals(200, response.getStatus());
-            System.out.print("###");
-            System.out.print(response.getBody());
-            //assertEquals("Pong", response.getBody());
+            assertEquals("[{\"text\":\"Report:\\n\\nAugust: 38,260.00 EUR\\n\\nSeptember: 40,500.00 EUR\\n\\nOctober: 45,940.00 EUR\\n\"}]", response.getBody());
 
         }
 

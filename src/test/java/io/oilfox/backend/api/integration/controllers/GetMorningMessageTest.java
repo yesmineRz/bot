@@ -30,9 +30,7 @@ public class GetMorningMessageTest extends TestBase {
                     .asString();
 
             assertEquals(200, response.getStatus());
-            System.out.print("###");
-            System.out.print(response.getBody());
-            //assertEquals("Pong", response.getBody());
+            assertEquals("[{\"text\":\"Everything is fine.\\nGood morning username!\\nHere is your personal financial overview for Nov 21.\\nYou have 43,567.00 EUR on your current account and an overdraft facility of 20,000.00 EUR. Today you a have a scheduled outbound payment of 2,500.00 EUR for rent. You will be fine.\\nHave a nice day.\"}]", response.getBody());
 
         }
 

@@ -30,9 +30,7 @@ public class GetLastTransactionsTest extends TestBase {
                     .asString();
 
             assertEquals(200, response.getStatus());
-            System.out.print("###");
-            System.out.print(response.getBody());
-            //assertEquals("Pong", response.getBody());
+            assertEquals("[{\"text\":\"1,560.00 EUR for communication, 96.00 EUR for lunch, 1,235.00 EUR for hardware, 12,800.00 EUR for salaries, 1,980.00 EUR for travels.\"}]", response.getBody());
 
         }
 

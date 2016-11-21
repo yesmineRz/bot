@@ -32,9 +32,7 @@ public class GetCurrentBalanceTest extends TestBase {
                     .asString();
 
             assertEquals(200, response.getStatus());
-            System.out.print("###");
-            System.out.print(response.getBody());
-            //assertEquals("Pong", response.getBody());
+            assertEquals("[{\"text\":\"Current balance is 43,567.00 EUR\"}]", response.getBody());
 
         }
 
