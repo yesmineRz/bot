@@ -15,7 +15,7 @@ import static junit.framework.Assert.assertEquals;
  */
 public class GetLastTransactionsTest extends TestBase {
 
-    private String URL = "http://localhost:9999/getlasttransactions/58107cbae4b061a94581d983";
+    private String URL = "http://localhost:9999/getlasttransactions";
 
     @BeforeClass
     public static final void classSetup() throws Exception {

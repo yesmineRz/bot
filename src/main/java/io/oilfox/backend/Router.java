@@ -27,15 +27,15 @@ public final class Router {
         router.get("/uuu/{month1}/{value1}/{month2}/{value2}/{month3}/{value3}", ChartController.class, "uuu");
         //router.get("/json", ChartController.class, "accessJson");
 
-        router.get("/getcurrentbalance/{id}", ChartController.class, "getCurrentBalance");
-        router.get("/getpreviousbalancewithnumbers/{id}", ChartController.class, "getPreviousBalanceWithNumbers");
-        router.get("/getfuturebalancewithnumbers/{id}", ChartController.class, "getFutureBalanceWithNumbers");
-        router.get("/getpreviousbalancewithchart/{id}", ChartController.class, "getPreviousBalanceWithChart");
-        router.get("/getfuturebalancewithchart/{id}", ChartController.class, "getFutureBalanceWithChart");
-        router.get("/getlasttransactions/{id}", ChartController.class, "getLastTransactions");
-        router.get("/getmorningmessage/{name}/{id}", ChartController.class, "getMorningMessage");
-        router.get("/getfuturebalancenextmonth/{id}", ChartController.class, "getFutureBalanceNextMonth");
-        router.get("/getreminder/{id}/{delay}/{type}", ChartController.class, "getReminder");
+        router.get("/getcurrentbalance", ChartController.class, "getCurrentBalance");
+        router.get("/getpreviousbalancewithnumbers", ChartController.class, "getPreviousBalanceWithNumbers");
+        router.get("/getfuturebalancewithnumbers", ChartController.class, "getFutureBalanceWithNumbers");
+        router.get("/getpreviousbalancewithchart", ChartController.class, "getPreviousBalanceWithChart");
+        router.get("/getfuturebalancewithchart", ChartController.class, "getFutureBalanceWithChart");
+        router.get("/getlasttransactions", ChartController.class, "getLastTransactions");
+        router.get("/getmorningmessage/{name}", ChartController.class, "getMorningMessage");
+        router.get("/getfuturebalancenextmonth", ChartController.class, "getFutureBalanceNextMonth");
+        router.get("/getreminder/{delay}/{type}", ChartController.class, "getReminder");
 
     }
 }

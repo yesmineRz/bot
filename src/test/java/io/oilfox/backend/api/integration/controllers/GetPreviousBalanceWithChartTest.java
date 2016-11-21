@@ -15,7 +15,7 @@ import static junit.framework.Assert.assertEquals;
  */
 public class GetPreviousBalanceWithChartTest extends TestBase {
 
-    private String URL = "http://localhost:9999/getpreviousbalancewithchart/58107cbae4b061a94581d983";
+    private String URL = "http://localhost:9999/getpreviousbalancewithchart";
 
     @BeforeClass
     public static final void classSetup() throws Exception {

@@ -13,9 +13,9 @@ import static junit.framework.Assert.assertEquals;
 /**
  * Created by Yesmine on 27/10/16.
  */
-public class GetFutureBalanceWithNumbersTest extends TestBase {
+public class GetFutureBalanceNextMonthTest extends TestBase {
 
-    private String URL = "http://localhost:9999/getfuturebalancewithnumbers";
+    private String URL = "http://localhost:9999/getfuturebalancenextmonth";
 
     @BeforeClass
     public static final void classSetup() throws Exception {

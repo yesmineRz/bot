@@ -15,7 +15,7 @@ import static junit.framework.Assert.assertEquals;
  */
 public class GetMorningMessageTest extends TestBase {
 
-    private String URL = "http://localhost:9999/getmorningmessage/username/5811f9b6e4b048967e4ac0de";
+    private String URL = "http://localhost:9999/getmorningmessage/username";
 
     @BeforeClass
     public static final void classSetup() throws Exception {

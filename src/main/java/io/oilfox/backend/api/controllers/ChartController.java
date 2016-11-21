@@ -159,29 +159,17 @@ public class ChartController extends AbstractController{
     @Authenticated
     @Produces("text/plain")
     @ApiDocDescription("test json")
-    public Response getCurrentBalance(@PathParam("id") String id) throws Exception {
+    public Response getCurrentBalance() throws Exception {
 
         String currentBalance = null;
         String message = "[{\"text\":\"Unable to retrieve your account balance\"}]";
-
 
         //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
         String text = readFile("data.json");
 
         JSONObject jobj = new JSONObject(text);
-
-
-        JSONArray jarr = new JSONArray(jobj.getJSONArray("users").toString());
-
-         for(int i = 0; i < jarr.length(); i++) {
-             JSONObject user = jarr.getJSONObject(i);
-             if(user.getString("fb_id").equals(id)){
-                 currentBalance = user.getString("current_balance");
-                 message = "[{\"text\":\"Current balance is "+currentBalance+" EUR\"}]";
-             }
-
-
-         }
+        currentBalance = jobj.getString("current_balance");
+        message = "[{\"text\":\"Current balance is " + currentBalance + " EUR\"}]";
 
         return Response.ok(message).status(200).build();
     }
@@ -189,33 +177,24 @@ public class ChartController extends AbstractController{
     @Authenticated
     @Produces("text/plain")
     @ApiDocDescription("test json")
-    public Response getPreviousBalanceWithNumbers(@PathParam("id") String id) throws Exception {
+    public Response getPreviousBalanceWithNumbers() throws Exception {
 
         String message = "[{\"text\":\"Unable to retrieve your account balance for the last months\"}]";
-
 
         //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
         String text = readFile("data.json");
 
         JSONObject jobj = new JSONObject(text);
+        JSONArray previous = new JSONArray(jobj.getJSONArray("balance_previous").toString());
 
-
-        JSONArray jarr = new JSONArray(jobj.getJSONArray("users").toString());
-
-        for(int i = 0; i < jarr.length(); i++) {
-            JSONObject user = jarr.getJSONObject(i);
-            if(user.getString("fb_id").equals(id)){
-                JSONArray previous = new JSONArray(user.getJSONArray("balance_previous").toString());
-
-                message = "[{\"text\":\"Report:\\n";
-                for(int j = 0; j < previous.length(); j++) {
-                    String month = previous.getJSONObject(j).getString("month").toString();
-                    String value = previous.getJSONObject(j).getString("value").toString();
-                    message += "\\n" + month +": " + value + " EUR\\n";
-                }
-                message += "\"}]";
-            }
+        message = "[{\"text\":\"Report:\\n";
+        for (int j = 0; j < previous.length(); j++) {
+            String month = previous.getJSONObject(j).getString("month").toString();
+            String value = previous.getJSONObject(j).getString("value").toString();
+            message += "\\n" + month + ": " + value + " EUR\\n";
         }
+        message += "\"}]";
+
 
         return Response.ok(message).status(200).build();
     }
@@ -241,33 +220,24 @@ public class ChartController extends AbstractController{
     @Authenticated
     @Produces("text/plain")
     @ApiDocDescription("test json")
-    public Response getFutureBalanceWithNumbers(@PathParam("id") String id) throws Exception {
+    public Response getFutureBalanceWithNumbers() throws Exception {
 
         String message = "[{\"text\":\"Unable to retrieve your account balance for the future months\"}]";
 
         //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
         String text = readFile("data.json");
 
-
         JSONObject jobj = new JSONObject(text);
 
+        JSONArray previous = new JSONArray(jobj.getJSONArray("balance_future").toString());
 
-        JSONArray jarr = new JSONArray(jobj.getJSONArray("users").toString());
-
-        for(int i = 0; i < jarr.length(); i++) {
-            JSONObject user = jarr.getJSONObject(i);
-            if(user.getString("fb_id").equals(id)){
-                JSONArray previous = new JSONArray(user.getJSONArray("balance_future").toString());
-
-                message = "[{\"text\":\"Forecast:\\n";
-                for(int j = 0; j < previous.length(); j++) {
-                    String month = previous.getJSONObject(j).getString("month").toString();
-                    String value = previous.getJSONObject(j).getString("value").toString();
-                    message += "\\n" + month +": " + value + " EUR\\n";
-                }
-                message += "\"}]";
-            }
+        message = "[{\"text\":\"Forecast:\\n";
+        for (int j = 0; j < previous.length(); j++) {
+            String month = previous.getJSONObject(j).getString("month").toString();
+            String value = previous.getJSONObject(j).getString("value").toString();
+            message += "\\n" + month + ": " + value + " EUR\\n";
         }
+        message += "\"}]";
 
         return Response.ok(message).status(200).build();
     }
@@ -275,7 +245,7 @@ public class ChartController extends AbstractController{
     @Authenticated
     @Produces("text/plain")
     @ApiDocDescription("test json")
-    public Response getPreviousBalanceWithChart(@PathParam("id") String id) throws Exception {
+    public Response getPreviousBalanceWithChart() throws Exception {
         String message = "[{\"text\":\"Unable to retrieve your account balance for the last months\"}]";
         String url = "https://mantro-bot-api.herokuapp.com/getchart";
 
@@ -286,12 +256,7 @@ public class ChartController extends AbstractController{
         JSONObject jobj = new JSONObject(text);
 
 
-        JSONArray jarr = new JSONArray(jobj.getJSONArray("users").toString());
-
-        for(int i = 0; i < jarr.length(); i++) {
-            JSONObject user = jarr.getJSONObject(i);
-            if(user.getString("fb_id").equals(id)){
-                JSONArray previous = new JSONArray(user.getJSONArray("balance_previous").toString());
+                JSONArray previous = new JSONArray(jobj.getJSONArray("balance_previous").toString());
 
                 //message = "[{\"text\":\"Your previous account balance is:";
                 for(int j = 0; j < previous.length(); j++) {
@@ -304,8 +269,7 @@ public class ChartController extends AbstractController{
                 }
                 url += "\"\n";
                 //message += "\"}]";
-            }
-        }
+
             getStaticChart("2");
             String staticUrl = "https://mantro-bot-api.herokuapp.com/getstaticchart/2";
 
@@ -343,7 +307,7 @@ public class ChartController extends AbstractController{
     @Authenticated
     @Produces("text/plain")
     @ApiDocDescription("test json")
-    public Response getFutureBalanceWithChart(@PathParam("id") String id) throws Exception {
+    public Response getFutureBalanceWithChart() throws Exception {
 
         String message = "[{\"text\":\"Unable to retrieve your account balance for the future months\"}]";
         String url = "https://mantro-bot-api.herokuapp.com/getchart";
@@ -355,12 +319,8 @@ public class ChartController extends AbstractController{
         JSONObject jobj = new JSONObject(text);
 
 
-        JSONArray jarr = new JSONArray(jobj.getJSONArray("users").toString());
 
-        for(int i = 0; i < jarr.length(); i++) {
-            JSONObject user = jarr.getJSONObject(i);
-            if(user.getString("fb_id").equals(id)){
-                JSONArray previous = new JSONArray(user.getJSONArray("balance_future").toString());
+                JSONArray previous = new JSONArray(jobj.getJSONArray("balance_future").toString());
 
                 //message = "[{\"text\":\"Your previous account balance is:";
                 for(int j = 0; j < previous.length(); j++) {
@@ -372,8 +332,7 @@ public class ChartController extends AbstractController{
                 }
                 url += "\"\n";
                 //message += "\"}]";
-            }
-        }
+
 
         getStaticChart("1");
         String staticUrl = "https://mantro-bot-api.herokuapp.com/getstaticchart/1";
@@ -399,7 +358,7 @@ public class ChartController extends AbstractController{
     @Authenticated
     @Produces("text/plain")
     @ApiDocDescription("test json")
-    public Response getLastTransactions(@PathParam("id") String id) throws Exception {
+    public Response getLastTransactions() throws Exception {
 
         String message = "[{\"text\":\"Unable to retrieve your last transactions\"}]";
 
@@ -411,12 +370,8 @@ public class ChartController extends AbstractController{
         JSONObject jobj = new JSONObject(text);
 
 
-        JSONArray jarr = new JSONArray(jobj.getJSONArray("users").toString());
 
-        for(int i = 0; i < jarr.length(); i++) {
-            JSONObject user = jarr.getJSONObject(i);
-            if(user.getString("fb_id").equals(id)){
-                JSONArray previous = new JSONArray(user.getJSONArray("recent_transactions").toString());
+                JSONArray previous = new JSONArray(jobj.getJSONArray("recent_transactions").toString());
 
                 message = "[{\"text\":\"";
                 for(int j = 0; j < previous.length(); j++) {
@@ -433,8 +388,7 @@ public class ChartController extends AbstractController{
                 }
 
                 message += "\"}]";
-            }
-        }
+
 
 
         return Response.ok(message).status(200).build();
@@ -445,7 +399,7 @@ public class ChartController extends AbstractController{
     @Authenticated
     @Produces("text/plain")
     @ApiDocDescription("test json")
-    public Response getMorningMessage(@PathParam("name") String name, @PathParam("id") String id) throws Exception {
+    public Response getMorningMessage(@PathParam("name") String name) throws Exception {
 
         String message = "[{\"text\":\"Everything is fine.\\n";
         message += "Good morning "+name+"!\\n";
@@ -464,20 +418,13 @@ public class ChartController extends AbstractController{
         JSONObject jobj = new JSONObject(text);
 
 
-        JSONArray jarr = new JSONArray(jobj.getJSONArray("users").toString());
 
-        for(int i = 0; i < jarr.length(); i++) {
-            JSONObject user = jarr.getJSONObject(i);
-            if(user.getString("fb_id").equals(id)){
                 foundUser = true;
-                currentBalance = user.getString("current_balance");
-                overdraft = user.getString("overdraft_facility");
-                scheduled_payment = user.getString("scheduled_payment");
+                currentBalance = jobj.getString("current_balance");
+                overdraft = jobj.getString("overdraft_facility");
+                scheduled_payment = jobj.getString("scheduled_payment");
                 message += "Here is your personal financial overview for "+currentDate+".\\nYou have "+currentBalance+" EUR on your current account and an overdraft facility of "+overdraft+" EUR. Today you a have a scheduled outbound payment of "+scheduled_payment+" EUR for rent. You will be fine.\\nHave a nice day.\"}]";
-            }
 
-
-        }
 
         if(!foundUser){
             message += "\"}]";
@@ -490,7 +437,7 @@ public class ChartController extends AbstractController{
     @Authenticated
     @Produces("text/plain")
     @ApiDocDescription("test json")
-    public Response getFutureBalanceNextMonth(@PathParam("id") String id) throws Exception {
+    public Response getFutureBalanceNextMonth() throws Exception {
 
         String message = "[{\"text\":\"Unable to retrieve your account balance for the next month\"}]";
 
@@ -501,12 +448,8 @@ public class ChartController extends AbstractController{
         JSONObject jobj = new JSONObject(text);
 
 
-        JSONArray jarr = new JSONArray(jobj.getJSONArray("users").toString());
 
-        for(int i = 0; i < jarr.length(); i++) {
-            JSONObject user = jarr.getJSONObject(i);
-            if(user.getString("fb_id").equals(id)){
-                JSONArray previous = new JSONArray(user.getJSONArray("balance_future").toString());
+                JSONArray previous = new JSONArray(jobj.getJSONArray("balance_future").toString());
 
                 message = "[{\"text\":\"";
 
@@ -516,8 +459,7 @@ public class ChartController extends AbstractController{
 
 
                 message += "\"}]";
-            }
-        }
+
 
         return Response.ok(message).status(200).build();
     }
@@ -526,7 +468,7 @@ public class ChartController extends AbstractController{
     @Authenticated
     @Produces("text/plain")
     @ApiDocDescription("test json")
-    public Response getReminder(@PathParam("id") String id, @PathParam("delay") String delay, @PathParam("type") String type) throws Exception {
+    public Response getReminder(@PathParam("delay") String delay, @PathParam("type") String type) throws Exception {
 
         if(delay.equals("1")){
             TimeUnit.SECONDS.sleep(25);
@@ -534,13 +476,13 @@ public class ChartController extends AbstractController{
             Response r = null;
 
             if(type.equals("1")){
-                r = getPreviousBalanceWithNumbers(id);
+                r = getPreviousBalanceWithNumbers();
             }else if(type.equals("2")){
-                r = getPreviousBalanceWithChart(id);
+                r = getPreviousBalanceWithChart();
             }else if(type.equals("3")){
-                r = getFutureBalanceWithNumbers(id);
+                r = getFutureBalanceWithNumbers();
             }else if(type.equals("4")){
-                r = getFutureBalanceWithChart(id);
+                r = getFutureBalanceWithChart();
             }else if(type.equals("5")){
                 String message = "[{\"text\":\"Reminder: Please check your payments\"}]";
                 r = Response.ok(message).status(200).build();
