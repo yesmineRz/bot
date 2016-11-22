@@ -434,6 +434,39 @@ public class ChartController extends AbstractController{
     @Authenticated
     @Produces("text/plain")
     @ApiDocDescription("test json")
+    public Response getBriefing(@PathParam("name") String name) throws Exception {
+
+        String message = "[{\"text\":\"Everything is fine " + name + "!\\n";
+        String currentBalance = "";
+        String overdraft = "";
+        String scheduled_payment = "";
+        Boolean foundUser = false;
+
+        DateFormat dateFormat = new SimpleDateFormat("MMM dd");
+        Date date = new Date();
+        String currentDate = dateFormat.format(date);
+
+        //String text = new String(Files.readAllBytes(Paths.get("data.json")), StandardCharsets.UTF_8);
+        String text = readFile("data.json");
+
+        JSONObject jobj = new JSONObject(text);
+
+        foundUser = true;
+        currentBalance = jobj.getString("current_balance");
+        overdraft = jobj.getString("overdraft_facility");
+        scheduled_payment = jobj.getString("scheduled_payment");
+        message += "Here is your personal financial overview for " + currentDate + ".\\nYou have " + currentBalance + " EUR on your current account and an overdraft facility of " + overdraft + " EUR. Today you a have a scheduled outbound payment of " + scheduled_payment + " EUR for rent. You will be fine.\\nHave a nice day.\"}]";
+
+        if(!foundUser){
+            message += "\"}]";
+        }
+
+        return Response.ok(message).status(200).build();
+    }
+
+    @Authenticated
+    @Produces("text/plain")
+    @ApiDocDescription("test json")
     public Response getFutureBalanceNextMonth() throws Exception {
 
         String message = "[{\"text\":\"Unable to retrieve your account balance for the next month\"}]";
