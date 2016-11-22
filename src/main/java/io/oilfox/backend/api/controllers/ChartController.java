@@ -231,7 +231,7 @@ public class ChartController extends AbstractController{
 
         JSONArray previous = new JSONArray(jobj.getJSONArray("balance_future").toString());
 
-        message = "[{\"text\":\"Here is your balance forecast for next 3 months:\\n";
+        message = "[{\"text\":\"Here is your balance forecast for the next 3 months:\\n";
         for (int j = 0; j < previous.length(); j++) {
             String month = previous.getJSONObject(j).getString("month").toString();
             String value = previous.getJSONObject(j).getString("value").toString();
@@ -482,6 +482,8 @@ public class ChartController extends AbstractController{
             }else if(type.equals("5")){
                 String message = "[{\"text\":\"Reminder: Please check your payments\"}]";
                 r = Response.ok(message).status(200).build();
+            }else if(type.equals("6")){
+                r = getLastTransactions();
             }
 
             return r;
