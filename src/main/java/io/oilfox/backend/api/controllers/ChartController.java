@@ -169,7 +169,7 @@ public class ChartController extends AbstractController{
 
         JSONObject jobj = new JSONObject(text);
         currentBalance = jobj.getString("current_balance");
-        message = "[{\"text\":\"Current balance is " + currentBalance + " EUR\"}]";
+        message = "[{\"text\":\"Your current balance is " + currentBalance + " EUR\"}]";
 
         return Response.ok(message).status(200).build();
     }
@@ -187,7 +187,7 @@ public class ChartController extends AbstractController{
         JSONObject jobj = new JSONObject(text);
         JSONArray previous = new JSONArray(jobj.getJSONArray("balance_previous").toString());
 
-        message = "[{\"text\":\"Report:\\n";
+        message = "[{\"text\":\"Here is your account balance for the last 3 months :\\n";
         for (int j = 0; j < previous.length(); j++) {
             String month = previous.getJSONObject(j).getString("month").toString();
             String value = previous.getJSONObject(j).getString("value").toString();
@@ -231,7 +231,7 @@ public class ChartController extends AbstractController{
 
         JSONArray previous = new JSONArray(jobj.getJSONArray("balance_future").toString());
 
-        message = "[{\"text\":\"Forecast:\\n";
+        message = "[{\"text\":\"Here is your balance forecast for next 3 months:\\n";
         for (int j = 0; j < previous.length(); j++) {
             String month = previous.getJSONObject(j).getString("month").toString();
             String value = previous.getJSONObject(j).getString("value").toString();
@@ -373,7 +373,7 @@ public class ChartController extends AbstractController{
 
                 JSONArray previous = new JSONArray(jobj.getJSONArray("recent_transactions").toString());
 
-                message = "[{\"text\":\"";
+                message = "[{\"text\":\"Here are your recent transactions:\\n";
                 for(int j = 0; j < previous.length(); j++) {
                     String date = previous.getJSONObject(j).getString("date").toString();
                     String type = previous.getJSONObject(j).getString("type").toString();
@@ -401,8 +401,8 @@ public class ChartController extends AbstractController{
     @ApiDocDescription("test json")
     public Response getMorningMessage(@PathParam("name") String name) throws Exception {
 
-        String message = "[{\"text\":\"Everything is fine.\\n";
-        message += "Good morning "+name+"!\\n";
+        String message = "[{\"text\":\"Good morning " + name + "!\\n";
+        message += "Everything is fine.\\n";
         String currentBalance = "";
         String overdraft = "";
         String scheduled_payment = "";
@@ -417,14 +417,11 @@ public class ChartController extends AbstractController{
 
         JSONObject jobj = new JSONObject(text);
 
-
-
-                foundUser = true;
-                currentBalance = jobj.getString("current_balance");
-                overdraft = jobj.getString("overdraft_facility");
-                scheduled_payment = jobj.getString("scheduled_payment");
-                message += "Here is your personal financial overview for "+currentDate+".\\nYou have "+currentBalance+" EUR on your current account and an overdraft facility of "+overdraft+" EUR. Today you a have a scheduled outbound payment of "+scheduled_payment+" EUR for rent. You will be fine.\\nHave a nice day.\"}]";
-
+        foundUser = true;
+        currentBalance = jobj.getString("current_balance");
+        overdraft = jobj.getString("overdraft_facility");
+        scheduled_payment = jobj.getString("scheduled_payment");
+        message += "Here is your personal financial overview for " + currentDate + ".\\nYou have " + currentBalance + " EUR on your current account and an overdraft facility of " + overdraft + " EUR. Today you a have a scheduled outbound payment of " + scheduled_payment + " EUR for rent. You will be fine.\\nHave a nice day.\"}]";
 
         if(!foundUser){
             message += "\"}]";
@@ -448,17 +445,16 @@ public class ChartController extends AbstractController{
         JSONObject jobj = new JSONObject(text);
 
 
+        JSONArray previous = new JSONArray(jobj.getJSONArray("balance_future").toString());
 
-                JSONArray previous = new JSONArray(jobj.getJSONArray("balance_future").toString());
+        message = "[{\"text\":\"";
 
-                message = "[{\"text\":\"";
-
-                String month = previous.getJSONObject(0).getString("month").toString();
-                String value = previous.getJSONObject(0).getString("value").toString();
-                message = "[{\"text\":\"Based on your regular in- and outflows you will have "+value+" EUR\"}]";
+        String month = previous.getJSONObject(0).getString("month").toString();
+        String value = previous.getJSONObject(0).getString("value").toString();
+        message = "[{\"text\":\"Based on your regular in- and outflows you will have " + value + " EUR\"}]";
 
 
-                message += "\"}]";
+        message += "\"}]";
 
 
         return Response.ok(message).status(200).build();
